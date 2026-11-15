@@ -70,16 +70,15 @@ public class MaquinaDeBanho {
     }
 
     public void retirarPet() {
-        if(petNaMaquina ==null)
+        if (petNaMaquina == null)
             throw new IllegalStateException("Nenhum pet está na máquina para ser retirado.");
-        System.out.printf("Retirando pet '" + petNaMaquina + "'.");
-        if(!petLimpo){
+        System.out.println("Retirando pet '" + petNaMaquina + "'.");
+        if (!petLimpo) {
             System.out.println("Aviso: o pet não foi limpo – a máquina precisará ser limpa antes de aceitar outro pet.");
         }
         petNaMaquina = null;
-        petLimpo = false;
+        petLimpo = false;            // garante que, ao sair, a máquina está no estado "vazia e suja"
     }
-
     /* ---------- Banho e limpeza ---------- */
     public void darBanho() {
         if (petNaMaquina == null)
